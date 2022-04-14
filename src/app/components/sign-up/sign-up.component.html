@@ -1,0 +1,28 @@
+<div class="form-container mat-elevation-z5">
+    <h1> Sign Up </h1>
+    <form [formGroup]="signUpForm" (ngSubmit)="submit()">
+        <mat-form-field>
+            <input matInput placeholder="إسمك ؟" formControlName="name" />
+            <mat-error *ngIf="name?.errors?.['required']"> لازم إسمك  </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Adress Email" formControlName="email" />
+            <mat-error *ngIf="email?.errors?.['required']"> Het Email S7i7 3ad </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Mot de passe " formControlName="password" type="password" />
+            <mat-error *ngIf="password?.errors?.['required']"> 7ot password</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Confirmer Mot de passe " formControlName="confirmPassword" type="password" />
+            <mat-error *ngIf="confirmPassword?.errors?.['required']"> 3awed 7ot password</mat-error>
+        </mat-form-field>
+        <mat-error *ngIf="signUpForm.errors?.['passwordsDontMatch']">
+            Les passwords sont pas KIF KIF !
+        </mat-error>
+        <div class="center margin-top">
+        <button mat-raised-button color="warn" type="submit"> Sign Up! </button>
+    </div>
+        
+    </form>
+    </div>
